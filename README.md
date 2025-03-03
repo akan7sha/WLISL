@@ -3,11 +3,6 @@
 This repository proposes an implementation of a Sign Recognition Model using the **MediaPipe** library 
 for landmark extraction and **Dynamic Time Warping** (DTW) as a similarity metric between signs.
 
-![](example.gif)
-
-#### Source : https://www.sicara.ai/blog/sign-language-recognition-using-mediapipe
-___
-
 ## Set up
 
 ### 1. Open terminal and go to the Project directory
@@ -21,22 +16,22 @@ The architecture of the `videos/` folder must be:
 ```
 |data/
     |-videos/
-          |-Hello/
-            |-<video_of_hello_1>.mp4
-            |-<video_of_hello_2>.mp4
+          |-arm/
+            |-<video_of_arm_1>.mp4
+            |-<video_of_arm_2>.mp4
             ...
-          |-Thanks/
-            |-<video_of_thanks_1>.mp4
-            |-<video_of_thanks_2>.mp4
+          |-Urgent/
+            |-<video_of_Urgent_1>.mp4
+            |-<video_of_URgent_2>.mp4
             ...
 ```
 
-To automatically create a small dataset of French signs:
+To automatically create a small dataset of WSISL signs:
 
 - Install `ffmpeg` (for MacOS `brew install ffmpeg`)
 - Run: ` python yt_download.py `
 - Add more YouTube links in ``yt_links.csv`` if needed
-> N.B. The current dataset is insufficient to obtain good results. Feel free to add more links or import your own videos 
+> N.B. To add more links or import your own videos 
 
 ### 4. Load the dataset and turn on the Webcam
 
@@ -77,8 +72,6 @@ all the reference signs present in the dataset.
 ### *Dynamic Time Warping*
 
 -  DTW is widely used for computing time series similarity.
-
-- In this project, we compute the DTW of the variation of hand connexion angles over time.
 
 ___
 
